@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nvy-ED-OVJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nvy-ED-OVJ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
     </dependencies>
@@ -417,10 +417,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="hTS-FN-G9s">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="hTS-FN-G9s">
                                 <rect key="frame" x="48" y="110" width="219" height="31"/>
                                 <connections>
-                                    <action selector="updateGravityBehavior" destination="dwN-uc-Yc3" eventType="valueChanged" id="jxO-iU-drx"/>
+                                    <action selector="updatePushBehavior" destination="Lea-9R-t60" eventType="valueChanged" id="HQg-kZ-eYx"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADC-C5-vQI">
@@ -429,10 +429,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="GJP-QI-INa">
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="-1" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="GJP-QI-INa">
                                 <rect key="frame" x="48" y="72" width="219" height="31"/>
                                 <connections>
-                                    <action selector="updateGravityBehavior" destination="dwN-uc-Yc3" eventType="valueChanged" id="q6p-Jk-S1P"/>
+                                    <action selector="updatePushBehavior" destination="Lea-9R-t60" eventType="valueChanged" id="bsE-3z-Naf"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="💩" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAt-pm-7Su">
@@ -459,15 +459,28 @@
                                 <rect key="frame" x="-25" y="-15" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="toggleGravity" destination="dwN-uc-Yc3" eventType="valueChanged" id="y2o-z1-Xat"/>
+                                    <action selector="toggleForce" destination="Lea-9R-t60" eventType="valueChanged" id="vWF-dw-JR9"/>
                                 </connections>
                             </switch>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Reset" id="0UQ-zj-ME0"/>
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="0UQ-zj-ME0">
+                            <connections>
+                                <action selector="reset:" destination="Lea-9R-t60" id="yfW-q4-oiW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="activeSwitch" destination="s9M-Dm-ibQ" id="uJB-4c-ard"/>
+                        <outlet property="dxLabel" destination="4jH-ph-k6i" id="lT9-Ba-MhT"/>
+                        <outlet property="dxSlider" destination="GJP-QI-INa" id="So1-7H-hrc"/>
+                        <outlet property="dyLabel" destination="ADC-C5-vQI" id="qrW-1k-GA1"/>
+                        <outlet property="dySlider" destination="hTS-FN-G9s" id="p0m-mo-Tyu"/>
+                        <outlet property="largeView" destination="EAt-pm-7Su" id="oXj-4f-cpf"/>
+                        <outlet property="smallView" destination="d2h-of-zUX" id="QiP-Gq-MGh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GGj-6R-W5U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
