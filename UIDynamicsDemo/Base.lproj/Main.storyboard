@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nvy-ED-OVJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="nvy-ED-OVJ">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Exemplos de Dynamics-->
@@ -294,19 +295,26 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Gravidade" id="02V-HG-fWd">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="Swn-Qh-gbn">
-                            <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="NBe-nj-jyV">
-                                <rect key="frame" x="-25" y="-15" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YgV-l0-AyB">
+                                <rect key="frame" x="255" y="517" width="51" height="31"/>
                                 <connections>
-                                    <action selector="toggleGravity" destination="dwN-uc-Yc3" eventType="valueChanged" id="6QN-YL-zw6"/>
+                                    <action selector="toggleGravity" destination="dwN-uc-Yc3" eventType="valueChanged" id="5EE-aj-crJ"/>
                                 </connections>
                             </switch>
-                        </barButtonItem>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ligar" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nv6-4c-fka">
+                                <rect key="frame" x="173" y="522" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="YgV-l0-AyB" secondAttribute="trailing" id="HUP-BN-esr"/>
+                            <constraint firstItem="1Ke-NM-W45" firstAttribute="top" secondItem="YgV-l0-AyB" secondAttribute="bottom" constant="20" id="rN3-z7-ngU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Gravidade" id="02V-HG-fWd">
                         <barButtonItem key="rightBarButtonItem" title="Reset" id="ON4-62-Zt5">
                             <connections>
                                 <action selector="reset:" destination="dwN-uc-Yc3" id="OY8-fI-Cgx"/>
@@ -320,7 +328,7 @@
                         <outlet property="dxSlider" destination="yov-vb-kz4" id="8Gw-j6-Jpk"/>
                         <outlet property="dyLabel" destination="1dZ-Hy-B95" id="8s2-SA-qWV"/>
                         <outlet property="dySlider" destination="X6y-jQ-oov" id="XuY-AH-J7c"/>
-                        <outlet property="gravitySwitch" destination="NBe-nj-jyV" id="lr4-eH-Jja"/>
+                        <outlet property="gravitySwitch" destination="YgV-l0-AyB" id="2ro-Dq-xch"/>
                         <outlet property="heavyView" destination="jhr-na-hOX" id="qNl-Ta-ZE6"/>
                         <outlet property="lightView" destination="z6B-BS-tb0" id="Tbf-cP-yB9"/>
                     </connections>
@@ -449,31 +457,38 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uHN-C6-Byb">
+                                <rect key="frame" x="255" y="517" width="51" height="31"/>
+                                <connections>
+                                    <action selector="toggleForce" destination="Lea-9R-t60" eventType="valueChanged" id="W7h-pz-cyE"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ligar" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hg2-q4-r6u">
+                                <rect key="frame" x="173" y="522" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uHN-C6-Byb" firstAttribute="top" secondItem="ys7-qv-XxF" secondAttribute="bottom" constant="-51" id="qVP-XB-qZQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uHN-C6-Byb" secondAttribute="trailing" id="vtd-ln-MiW"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Contínuo" id="gIZ-jo-ENd">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="lEZ-0C-CSX">
-                            <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="s9M-Dm-ibQ">
-                                <rect key="frame" x="-25" y="-15" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="toggleForce" destination="Lea-9R-t60" eventType="valueChanged" id="vWF-dw-JR9"/>
-                                </connections>
-                            </switch>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Reset" id="0UQ-zj-ME0">
                             <connections>
                                 <action selector="reset:" destination="Lea-9R-t60" id="yfW-q4-oiW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
-                        <outlet property="activeSwitch" destination="s9M-Dm-ibQ" id="uJB-4c-ard"/>
+                        <outlet property="activeSwitch" destination="uHN-C6-Byb" id="IoN-32-6Dd"/>
                         <outlet property="dxLabel" destination="4jH-ph-k6i" id="lT9-Ba-MhT"/>
                         <outlet property="dxSlider" destination="GJP-QI-INa" id="So1-7H-hrc"/>
                         <outlet property="dyLabel" destination="ADC-C5-vQI" id="qrW-1k-GA1"/>
@@ -548,11 +563,20 @@
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncg-Qp-0pF">
+                                <rect key="frame" x="236" y="518" width="68" height="30"/>
+                                <state key="normal" title="Empurrar!">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ncg-Qp-0pF" firstAttribute="trailing" secondItem="IIa-Za-pzx" secondAttribute="trailingMargin" id="aJc-bD-Znl"/>
+                            <constraint firstItem="4Is-3y-s7U" firstAttribute="top" secondItem="Ncg-Qp-0pF" secondAttribute="bottom" constant="20" id="ije-kk-RAI"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Instantâneo" id="bma-74-eBa">
-                        <barButtonItem key="leftBarButtonItem" title="Empurrar!" id="J8r-r3-uYC"/>
                         <barButtonItem key="rightBarButtonItem" title="Reset" id="Uby-JU-9d0"/>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
