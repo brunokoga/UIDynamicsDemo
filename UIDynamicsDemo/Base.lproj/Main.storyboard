@@ -496,11 +496,40 @@
                     <view key="view" contentMode="scaleToFill" id="vLw-Pv-fod">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rkU-kv-eGZ">
+                                <rect key="frame" x="64" y="217" width="193" height="15"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hBt-9g-j7O">
+                                <rect key="frame" x="64" y="335" width="193" height="15"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b64-eP-dqE">
+                                <rect key="frame" x="80" y="269" width="160" height="30"/>
+                                <state key="normal" title="Adicionar uma View">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addView" destination="dfD-C8-Sj6" eventType="touchUpInside" id="5Lz-Qj-aYc"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Collision" id="hPW-jv-tsg"/>
+                    <navigationItem key="navigationItem" title="Collision" id="hPW-jv-tsg">
+                        <barButtonItem key="rightBarButtonItem" title="Reset" id="imo-xZ-k8X">
+                            <connections>
+                                <action selector="reset:" destination="dfD-C8-Sj6" id="7Fs-MM-M2u"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="bottomView" destination="hBt-9g-j7O" id="GFV-O2-qCj"/>
+                        <outlet property="topView" destination="rkU-kv-eGZ" id="Fvw-gI-pW1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="37P-2m-wU0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
