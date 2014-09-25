@@ -380,7 +380,7 @@
                                     <action selector="updateAttachmentValues:" destination="iG8-ar-kYj" eventType="valueChanged" id="Xg2-sh-mPA"/>
                                 </connections>
                             </stepper>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1" stepValue="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="99K-ix-Tlp">
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" stepValue="5" translatesAutoresizingMaskIntoConstraints="NO" id="99K-ix-Tlp">
                                 <rect key="frame" x="113" y="494" width="94" height="29"/>
                                 <connections>
                                     <action selector="updateAttachmentValues:" destination="iG8-ar-kYj" eventType="valueChanged" id="cDH-L6-xZz"/>

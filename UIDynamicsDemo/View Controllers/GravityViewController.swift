@@ -49,6 +49,17 @@ class GravityViewController: UIViewController {
 
     }
     
+    @IBAction func toggleGravity() {
+        //adicionamos gravidade se o switch estiver on. Caso contrários, a removemos.
+        if self.gravitySwitch.on {
+            self.animator?.addBehavior(self.gravityBehavior)
+        } else {
+            self.animator?.removeBehavior(self.gravityBehavior)
+        }
+        self.updateGravityBehavior()
+    }
+
+    
     @IBAction func updateGravityBehavior() {
         //se a gravidade estiver sendo ligada, removemos os behaviors de snap
         if self.gravitySwitch.on {
@@ -62,16 +73,6 @@ class GravityViewController: UIViewController {
         //update nos valores dos sliders
         self.dxLabel.text = String(format: "%.1f", self.dxSlider.value)
         self.dyLabel.text = String(format: "%.1f", self.dySlider.value)
-    }
-
-    @IBAction func toggleGravity() {
-        //adicionamos gravidade se o switch estiver on. Caso contrários, a removemos.
-        if self.gravitySwitch.on {
-            self.animator?.addBehavior(self.gravityBehavior)
-        } else {
-            self.animator?.removeBehavior(self.gravityBehavior)
-        }
-        self.updateGravityBehavior()
     }
     
     @IBAction func reset(sender: AnyObject) {

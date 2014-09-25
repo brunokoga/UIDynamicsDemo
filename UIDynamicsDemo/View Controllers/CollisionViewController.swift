@@ -34,6 +34,7 @@ class CollisionViewController: UIViewController {
         self.addCollisionBoundaryForTopEdgeOfView(self.bottomView, withIdentifier: "bottomViewTopBoundary")
         
         //descomente as linhas de baixo para adicionar o fundo como boundary também
+        
         /*
         self.addCollisionBoundaryForBottomEdgeOfView(self.topView, withIdentifier: "topViewBottomBoundary")
         self.addCollisionBoundaryForBottomEdgeOfView(self.bottomView, withIdentifier: "bottomViewBottomBoundary")
@@ -66,8 +67,8 @@ class CollisionViewController: UIViewController {
         
     }
     
-    func addCollisionBoundaryForBottomEdgeOfView(UIView, withIdentifier identifier: NSString) {
-        var origin = view.bounds.origin
+    func addCollisionBoundaryForBottomEdgeOfView(view: UIView, withIdentifier identifier: NSString) {
+        var origin = view.frame.origin
         var bottomLeftPoint = CGPointMake(origin.x, origin.y + view.frame.size.height)
         var bottomRightPoint = CGPointMake(origin.x + view.frame.size.width, bottomLeftPoint.y)
         

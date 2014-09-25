@@ -104,7 +104,7 @@ class AttachmentViewController: UIViewController {
         // atualizamos os valores dos labels, de acordo com os valores do stepper
         
         self.lengthLabel.text = String(format: "%.1f", Double(self.viewsAttachment.length))
-        self.frequencyLabel.text = String(format: "%.1f", Double(self.viewsAttachment.frequency))
+        self.frequencyLabel.text = String(format: "%.0f", Double(self.viewsAttachment.frequency))
         self.dampingLabel.text = String(format: "%.1f", Double(self.viewsAttachment.damping))
         
     }
